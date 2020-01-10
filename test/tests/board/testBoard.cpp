@@ -24,10 +24,10 @@ TEST(board_test, fsr_sense_left_toe_test) {
 TEST(board_test, fsr_sense_left_heel_test) {
 	MockInputPort* mock_port = new MockInputPort();
 	Board* board = new Board();
-	EXPECT_EQ(board->takeFsrSenseLeftToePort(), nullptr);
-	board->setFsrSenseLeftToePort(mock_port);
-	EXPECT_EQ(board->takeFsrSenseLeftToePort(), mock_port);
-	EXPECT_EQ(board->takeFsrSenseLeftToePort(), nullptr);
+	EXPECT_EQ(board->takeFsrSenseLeftHeelPort(), nullptr);
+	board->setFsrSenseLeftHeelPort(mock_port);
+	EXPECT_EQ(board->takeFsrSenseLeftHeelPort(), mock_port);
+	EXPECT_EQ(board->takeFsrSenseLeftHeelPort(), nullptr);
 	delete board;
 	delete mock_port;
 }
@@ -46,10 +46,10 @@ TEST(board_test, fsr_sense_right_toe_test) {
 TEST(board_test, fsr_sense_right_heel_test) {
 	MockInputPort* mock_port = new MockInputPort();
 	Board* board = new Board();
-	EXPECT_EQ(board->takeFsrSenseRightToePort(), nullptr);
-	board->setFsrSenseRightToePort(mock_port);
-	EXPECT_EQ(board->takeFsrSenseRightToePort(), mock_port);
-	EXPECT_EQ(board->takeFsrSenseRightToePort(), nullptr);
+	EXPECT_EQ(board->takeFsrSenseRightHeelPort(), nullptr);
+	board->setFsrSenseRightHeelPort(mock_port);
+	EXPECT_EQ(board->takeFsrSenseRightHeelPort(), mock_port);
+	EXPECT_EQ(board->takeFsrSenseRightHeelPort(), nullptr);
 	delete board;
 	delete mock_port;
 }
