@@ -13,7 +13,7 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 ################################
 # Link test executable against gtest & gtest_main
 
-add_executable(test_board testBoard.cpp)
-target_link_libraries(test_board gtest gtest_main biomech_exo
+add_executable(${PROJECT_NAME} testBoard.cpp)
+target_link_libraries(${PROJECT_NAME} gtest gtest_main biomech_exo
   mock_ports_input mock_ports_output mock_ports_special)
-gtest_add_tests(test_board "" AUTO)
+gtest_add_tests(${PROJECT_NAME} "" AUTO)
