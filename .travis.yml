@@ -57,4 +57,4 @@ script:
 after_success:
 
   - make coverage -j ${nproc}
-  - codecov -t a438b66c-0b19-4bcc-a566-4fe3840d83fe -X gcov
+  - codecov -t de14c4d6-500b-4845-8307-c46f8e1054fe -X gcov
