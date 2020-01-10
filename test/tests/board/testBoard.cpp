@@ -142,6 +142,61 @@ TEST(board_test, pot_right_knee_test) {
 	delete mock_port;
 }
 
+TEST(board_test, motor_error_left_ankle_test) {
+	MockInputPort* mock_port = new MockInputPort();
+	Board* board = new Board();
+	EXPECT_EQ(board->takeMotorErrorLeftAnklePort(), nullptr);
+	board->setMotorErrorLeftAnklePort(mock_port);
+	EXPECT_EQ(board->takeMotorErrorLeftAnklePort(), mock_port);
+	EXPECT_EQ(board->takeMotorErrorLeftAnklePort(), nullptr);
+	delete board;
+	delete mock_port;
+}
+
+TEST(board_test, motor_error_left_knee_test) {
+	MockInputPort* mock_port = new MockInputPort();
+	Board* board = new Board();
+	EXPECT_EQ(board->takeMotorErrorLeftKneePort(), nullptr);
+	board->setMotorErrorLeftKneePort(mock_port);
+	EXPECT_EQ(board->takeMotorErrorLeftKneePort(), mock_port);
+	EXPECT_EQ(board->takeMotorErrorLeftKneePort(), nullptr);
+	delete board;
+	delete mock_port;
+}
+
+TEST(board_test, motor_error_right_ankle_test) {
+	MockInputPort* mock_port = new MockInputPort();
+	Board* board = new Board();
+	EXPECT_EQ(board->takeMotorErrorRightAnklePort(), nullptr);
+	board->setMotorErrorRightAnklePort(mock_port);
+	EXPECT_EQ(board->takeMotorErrorRightAnklePort(), mock_port);
+	EXPECT_EQ(board->takeMotorErrorRightAnklePort(), nullptr);
+	delete board;
+	delete mock_port;
+}
+
+TEST(board_test, motor_error_right_knee_test) {
+	MockInputPort* mock_port = new MockInputPort();
+	Board* board = new Board();
+	EXPECT_EQ(board->takeMotorErrorRightKneePort(), nullptr);
+	board->setMotorErrorRightKneePort(mock_port);
+	EXPECT_EQ(board->takeMotorErrorRightKneePort(), mock_port);
+	EXPECT_EQ(board->takeMotorErrorRightKneePort(), nullptr);
+	delete board;
+	delete mock_port;
+}
+
+TEST(board_test, motor_enable_test) {
+	MockOutputPort* mock_port = new MockOutputPort();
+	Board* board = new Board();
+	EXPECT_EQ(board->takeMotorEnablePort(), nullptr);
+	board->setMotorEnablePort(mock_port);
+	EXPECT_EQ(board->takeMotorEnablePort(), mock_port);
+	EXPECT_EQ(board->takeMotorEnablePort(), nullptr);
+	delete board;
+	delete mock_port;
+}
+
 TEST(board_test, motor_left_ankle_test) {
 	MockOutputPort* mock_port = new MockOutputPort();
 	Board* board = new Board();
