@@ -16,3 +16,7 @@ target_include_directories(${PROJECT_NAME}_input PUBLIC . )
 add_library(${PROJECT_NAME}_output STATIC mockOutputPort.hpp)
 target_link_libraries(${PROJECT_NAME}_output gtest gmock biomech_exo)
 target_include_directories(${PROJECT_NAME}_output PUBLIC . )
+
+add_library(${PROJECT_NAME}_special STATIC mockSpecialPort.hpp)
+target_link_libraries(${PROJECT_NAME}_special gtest gmock biomech_exo)
+target_include_directories(${PROJECT_NAME}_special PUBLIC . )
