@@ -7,7 +7,6 @@ file(GLOB SOURCES "*.cpp")
 find_package(biomech_exo)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-include_directories(${mock_port_analog_input_SOURCE_DIR})
 
 ################################
 # Unit Tests
