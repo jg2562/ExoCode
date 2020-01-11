@@ -24,3 +24,7 @@ gtest_add_tests(${PROJECT_NAME}_max "" AUTO)
 add_executable(${PROJECT_NAME}_min testMin.cpp)
 target_link_libraries(${PROJECT_NAME}_min gtest gtest_main biomech_exo)
 gtest_add_tests(${PROJECT_NAME}_min "" AUTO)
+
+add_executable(${PROJECT_NAME}_average testAverage.cpp)
+target_link_libraries(${PROJECT_NAME}_average gtest gtest_main biomech_exo)
+gtest_add_tests(${PROJECT_NAME}_average "" AUTO)
