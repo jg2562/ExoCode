@@ -64,3 +64,57 @@ TEST(utils_moving_average_test, creation_test) {
 	MovingAverage* movingAverage = new MovingAverage(4);
 	delete movingAverage;
 }
+
+TEST(utils_moving_average_test, update_test) {
+	MovingAverage* movingAverage = new MovingAverage(4);
+	EXPECT_EQ(movingAverage->update(12),3);
+	EXPECT_EQ(movingAverage->update(4),4);
+	EXPECT_EQ(movingAverage->update(32),12);
+	EXPECT_EQ(movingAverage->update(2),12.5);
+	EXPECT_EQ(movingAverage->update(-2),9);
+	delete movingAverage;
+}
+
+TEST(utils_moving_average_test, average_test) {
+	MovingAverage* movingAverage = new MovingAverage(4);
+	EXPECT_EQ(movingAverage->getAverage(),0);
+	EXPECT_EQ(movingAverage->update(12),3);
+	EXPECT_EQ(movingAverage->getAverage(),3);
+	delete movingAverage;
+}
+
+TEST(utils_moving_average_test, initial_test) {
+	MovingAverage* movingAverage = new MovingAverage(4,10.0);
+	EXPECT_EQ(movingAverage->getAverage(),10);
+	EXPECT_EQ(movingAverage->update(2),8);
+	delete movingAverage;
+}
+
+TEST(utils_moving_average_test, size_average_test) {
+	MovingAverage* movingAverage = new MovingAverage(3);
+	EXPECT_EQ(movingAverage->update(12),4);
+	EXPECT_EQ(movingAverage->update(3),5);
+	EXPECT_EQ(movingAverage->update(33),16);
+	EXPECT_EQ(movingAverage->update(6),14);
+	delete movingAverage;
+}
+
+TEST(utils_moving_average_test, reset_test) {
+	MovingAverage* movingAverage = new MovingAverage(4);
+	EXPECT_EQ(movingAverage->getAverage(),0);
+	EXPECT_EQ(movingAverage->update(12),3);
+	EXPECT_EQ(movingAverage->getAverage(),3);
+	movingAverage->reset();
+	EXPECT_EQ(movingAverage->getAverage(),0);
+	delete movingAverage;
+}
+
+TEST(utils_moving_average_test, initial_reset_test) {
+	MovingAverage* movingAverage = new MovingAverage(4,10);
+	EXPECT_EQ(movingAverage->getAverage(),10);
+	EXPECT_EQ(movingAverage->update(14),11);
+	EXPECT_EQ(movingAverage->getAverage(),11);
+	movingAverage->reset(4);
+	EXPECT_EQ(movingAverage->getAverage(),4);
+	delete movingAverage;
+}
