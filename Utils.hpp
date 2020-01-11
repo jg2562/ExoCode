@@ -31,8 +31,7 @@ private:
   int index;
   int size;
 public:
-  MovingAverage(int size);
-  MovingAverage(int size, double initial);
+  MovingAverage(int size, double initial=0.0);
   ~MovingAverage();
   double update(double value);
   double getAverage();

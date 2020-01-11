@@ -35,10 +35,10 @@ void RunningAverage::reset(double initial){
   count = 1;
 }
 
-MovingAverage::MovingAverage(int size){
+MovingAverage::MovingAverage(int size, double initial){
   previous_values = new double[size];
   this->size = size;
-  this->reset();
+  this->reset(initial);
 }
 
 MovingAverage::~MovingAverage(){
