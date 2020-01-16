@@ -1,12 +1,39 @@
 #ifndef UTILITES_HEADER
 #define UTILITES_HEADER
 
+/**
+ * @brief Virtual class for an average
+ *
+ * A virtual class to allow for a generic average
+ */
 class Average{
 public:
+
+  /**
+   * @brief Cleans up average
+   */
   virtual ~Average();
+
+  /**
+   * @brief Update the average with the next value
+   * @param value The next value
+   */
   virtual double update(double value) = 0;
+
+  /**
+   * @brief Return the current average value
+   */
   virtual double getAverage() = 0;
+
+  /**
+   * @brief Reset the average to zero
+   */
   virtual void reset() = 0;
+
+  /**
+   * @brief Reset the average to the value
+   * @param value The initial value to reset to
+   */
   virtual void reset(double value) = 0;
 };
 
