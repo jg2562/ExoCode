@@ -81,6 +81,11 @@ public:
   void reset(double value);
 };
 
+/**
+ * @brief Utility for a moving average
+ *
+ * MovingAverage will only take an average over the last SIZE values
+ */
 class MovingAverage: public Average{
 private:
   double* previous_values;
@@ -89,11 +94,36 @@ private:
   int index;
   int size;
 public:
+  /**
+   * @brief The constructor with ability to set initial value
+   * @param size The size of the moving average
+   * @param initial The initial value the average should start with, defaults to 0.0
+   */
   MovingAverage(int size, double initial=0.0);
+
+  /**
+   * @brief Cleans up moving average
+   */
   ~MovingAverage();
+  /**
+   * @brief Update the average with the next value
+   * @param value The next value
+   */
   double update(double value);
+
+  /**
+   * @brief Return the current average value
+   */
   double getAverage();
+
+  /**
+   * @brief Reset the average to zero
+   */
   void reset();
+  /**
+   * @brief Reset the average to the value
+   * @param value The initial value to reset to
+   */
   void reset(double value);
 };
 
