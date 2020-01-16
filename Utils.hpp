@@ -37,16 +37,47 @@ public:
   virtual void reset(double value) = 0;
 };
 
+/**
+ * @brief Utility for a running average
+ *
+ * RunningAverage will keep accumulating values until a reset
+ */
 class RunningAverage:public Average{
 private:
   double avg;
   double count;
 public:
+  /**
+   * @brief The constructor with an initial value of zero
+   */
   RunningAverage();
+
+  /**
+   * @brief The constructor with ability to set initial value
+   * @param initial The initial value the running average should start with
+   */
   RunningAverage(double initial);
+
+  /**
+   * @brief Update the running average with the next value
+   * @param value The next value
+   */
   double update(double value);
+
+  /**
+   * @brief Return the current average value
+   */
   double getAverage();
+
+  /**
+   * @brief Reset the average to zero
+   */
   void reset();
+
+  /**
+   * @brief Reset the average to the value
+   * @param value The initial value to reset to
+   */
   void reset(double value);
 };
 
